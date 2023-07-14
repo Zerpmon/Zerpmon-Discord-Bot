@@ -49,7 +49,7 @@ async def update_nft_holdings(client: nextcord.Client):
                             t_serial.append(serial)
                             continue
                         print(serial, list(old_user['trainer_cards'].keys()))
-                        metadata = await xrpl_functions.get_nft_metadata(nft['URI'])
+                        metadata = xrpl_functions.get_nft_metadata(nft['URI'])
 
                         if "Zerpmon Trainers" in metadata['description']:
                             t_serial.append(serial)
@@ -66,7 +66,7 @@ async def update_nft_holdings(client: nextcord.Client):
                         if serial in list(old_user['zerpmons'].keys()):
                             serials.append(serial)
                             continue
-                        metadata = await xrpl_functions.get_nft_metadata(nft['URI'])
+                        metadata = xrpl_functions.get_nft_metadata(nft['URI'])
 
                         if "Zerpmon " in metadata['description']:
                             serials.append(serial)
