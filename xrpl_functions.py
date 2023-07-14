@@ -87,7 +87,7 @@ def get_nft_metadata(uri):
             data = json.load(f)
             for item in data:
                 if item["uri"] == uri:
-                    return item
+                    return item['metadata']
         return None
     except Exception as e:
         print(f"ERROR in getting metadata: {e}")
@@ -98,7 +98,7 @@ def get_nft_metadata_by_id(nftid):
             data = json.load(f)
             for item in data:
                 if item["nftid"] == nftid:
-                    return item
+                    return item['metadata']
         return None
     except Exception as e:
         print(f"ERROR in getting metadata: {e}")
